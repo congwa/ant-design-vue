@@ -96,6 +96,10 @@ const genBaseStyle: GenerateStyle<CommentToken> = token => {
             color: commentAuthorTimeColor,
             whiteSpace: 'nowrap',
             cursor: 'auto',
+            display: 'inline-block',
+            fontSize: commentFontSizeSm,
+            marginTop: commentActionsMarginTop,
+            marginBottom: commentActionsMarginBottom,
           },
         },
 

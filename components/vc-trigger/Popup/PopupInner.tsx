@@ -204,11 +204,11 @@ export default defineComponent({
                         class={mergedClassName}
                         onMouseenter={onMouseenter}
                         onMouseleave={onMouseleave}
-                        onMousedown={withModifiers(onMousedown, ['capture'])}
+                        onMousedown={withModifiers(onMousedown, ['stop'])}
                         {...{
                           [supportsPassive ? 'onTouchstartPassive' : 'onTouchstart']: withModifiers(
                             onTouchstart,
-                            ['capture'],
+                            ['stop'],
                           ),
                         }}
                         style={mergedStyle}

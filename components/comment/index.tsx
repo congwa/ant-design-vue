@@ -73,10 +73,24 @@ const Comment = defineComponent({
         <ul class={`${pre}-actions`}>{getAction(Array.isArray(actions) ? actions : [actions])}</ul>
       ) : null;
 
+      const footDom = (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+          }}
+          class={`${pre}-content-foot`}
+        >
+          {datetime && <div class={`${pre}-content-author-time`}>{datetime}</div>}
+          {actionDom}
+        </div>
+      );
+
       const authorContent = (
         <div class={`${pre}-content-author`}>
           {author && <span class={`${pre}-content-author-name`}>{author}</span>}
-          {datetime && <span class={`${pre}-content-author-time`}>{datetime}</span>}
         </div>
       );
 
@@ -84,7 +98,7 @@ const Comment = defineComponent({
         <div class={`${pre}-content`}>
           {authorContent}
           <div class={`${pre}-content-detail`}>{content}</div>
-          {actionDom}
+          {footDom}
         </div>
       );
 
